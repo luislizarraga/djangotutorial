@@ -1,5 +1,5 @@
 from django.contrib import admin
-from polls.models import Poll, Choice
+from polls.models import Choice, Poll
 
 
 class ChoiceInLine(admin.StackedInline):
@@ -16,7 +16,7 @@ class PollAdmin(admin.ModelAdmin):
         (None,              {'fields': ['question']}),
         ('Date Information',{'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
-    #inlines = [ChoiceInLine]
+    inlines = [ChoiceInline]
 
 
 #fieldsets = [
