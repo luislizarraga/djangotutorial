@@ -2,9 +2,9 @@ from django.contrib import admin
 from polls.models import Choice, Poll
 
 
-class ChoiceInline(admin.StackedInline):
-    model = Choice
-    extra = 3
+#class ChoiceInline(admin.StackedInline):
+#    model = Choice
+#    extra = 3
 
 
 
@@ -16,7 +16,7 @@ class PollAdmin(admin.ModelAdmin):
         (None,              {'fields': ['question']}),
         ('Date Information',{'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
-    inlines = [ChoiceInline]
+#    inlines = [ChoiceInline]
 
 
 #fieldsets = [
@@ -29,7 +29,7 @@ class PollAdmin(admin.ModelAdmin):
 #    fields = ['pub_date', 'question'] lo segundo que tenia dentro de la clase
 
 admin.site.register(Poll, PollAdmin)
-
+admin.site.register(Choice)
 
 
 
