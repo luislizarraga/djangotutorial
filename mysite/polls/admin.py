@@ -1,5 +1,13 @@
 from django.contrib import admin
-from polls.models import Poll
+from polls.models import Poll, Choice
+
+
+class ChoiceInLine(admin.StackedInLine):
+    model = Choice
+    extra = 3
+
+
+
 
 
 
@@ -8,6 +16,7 @@ class PollAdmin(admin.ModelAdmin):
         (None,              {'fields': ['question']}),
         ('Date Information',{'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
+    inlines = [ChoiceInLine]
 
 
 #fieldsets = [
