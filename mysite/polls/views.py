@@ -3,6 +3,7 @@
 from django.http import HttpResponse
 #from django.template import Context, loader
 from django.shortcuts import render
+from polls.models import Poll
 
 #def index(request):
 #    latest_poll_list = Poll.objects.order_by('-pub_date')[:5]
