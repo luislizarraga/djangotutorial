@@ -6,8 +6,17 @@ from polls.models import Poll
 class PollAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,              {'fields': ['question']}),
-        ('Date Information',{'fields': ['pub_date']}),
+        ('Date Information',{'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
+
+
+#fieldsets = [
+#        (None,              {'fields': ['question']}),     lo tercero que tenia
+#        ('Date Information',{'fields': ['pub_date']}),
+#    ]
+
+
+
 #    fields = ['pub_date', 'question'] lo segundo que tenia dentro de la clase
 
 admin.site.register(Poll, PollAdmin)
